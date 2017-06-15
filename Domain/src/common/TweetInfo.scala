@@ -1,7 +1,6 @@
 package common
 
 import scala.util.Try
-
 case class TweetInfo(
   tweet_id: Long,
   createdAt: Long,

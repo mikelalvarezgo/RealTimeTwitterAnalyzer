@@ -17,3 +17,5 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-mocha" % "1.1.0")
 
 //https://github.com/sbt/sbt-assembly
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.13.0")
+
+resolvers +=  "JBoss" at "https://repository.jboss.org"

@@ -16,15 +16,14 @@ object Common {
   
   val settings: Seq[Def.Setting[_]] = Seq(
     version := appVersion,
-    scalaVersion := "2.11.7",
+    scalaVersion := "2.11.6",
     javacOptions ++= Seq("-source", "1.7", "-target", "1.7"), //, "-Xmx2G"),
     scalacOptions ++= Seq("-deprecation", "-unchecked"),
     resolvers += Opts.resolver.mavenLocalFile,
     copyDepTask,
-    resolvers ++= Seq(DefaultMavenRepository,
-      Resolver.defaultLocal,
-      Resolver.mavenLocal,
+    resolvers ++= Seq(
       // Resolver.mavenLocal has issues - hence the duplication
+      "JBoss" at "https://repository.jboss.org/",
       "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository",
       "Apache Staging" at "https://repository.apache.org/content/repositories/staging/",
       Classpaths.typesafeReleases,

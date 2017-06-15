@@ -11,6 +11,7 @@ object Dependencies {
     val sprayVersion = "1.2.2"
     Seq(
       "org.spire-math" %% "cats" % "0.3.0",
+      "com.typesafe.akka" %% "akka-actor" % "2.4.11",
       "org.scalaz" %% "scalaz-core" % "7.2.0",
       "org.scalaz" %% "scalaz-scalacheck-binding" % "7.2.0",
       "com.typesafe.akka" %% "akka-actor" % "2.3.2",
@@ -21,14 +22,15 @@ object Dependencies {
       "org.apache.spark" %% "spark-core" % sparkVersion,
       "org.apache.spark" %% "spark-streaming" % sparkVersion,
       "org.apache.spark" %% "spark-streaming-twitter" % sparkVersion,
-      "org.slf4j" % "slf4j-simple" % "1.7.5",
       "org.mongodb" %% "casbah-commons" % casbahV,
       "org.mongodb" %% "casbah-core" % casbahV,
       "org.mongodb" %% "casbah-query" % casbahV,
-      "io.spray" % "spray-json_2.11" % "1.3.2",
+      "org.slf4j" % "slf4j-simple" % "1.7.10" % "test",
       // https://mvnrepository.com/artifact/org.apache.tika/tika-core
       "org.apache.tika" % "tika-core" % "1.10",
-      "com.optimaize.languagedetector" % "language-detector" % "0.5"
+      "com.optimaize.languagedetector" % "language-detector" % "0.5",
+      "org.scala-lang" % "scala-reflect" % "2.11.6",
+      "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.4"
     )
   }
 
@@ -51,13 +53,5 @@ object Dependencies {
     "org.apache.spark" %% "spark-sql" % sparkVersion,
     "org.apache.spark" %% "spark-mllib" % sparkVersion,
     "org.apache.spark" %% "spark-streaming" % sparkVersion)
-  val webDependencies    : Seq[ModuleID] = commonDependencies ++ json ++ {
-    Seq(
-      //jdbc,
-      //cache,
-      // ws
-      //specs2 % Test
-    )
 
-  }
 }
